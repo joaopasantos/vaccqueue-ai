@@ -8,9 +8,9 @@ class AlgoritmoGenetico():
         self.melhor_solucao = 0
         self.lista_solucoes = []
         
-    def inicializa_populacao(self, valores, limite_espacos):
+    def inicializa_populacao(self, valores, espacos, limite_espacos):
         for i in range(self.tamanho_populacao):
-            self.populacao.append(Individuo(valores, limite_espacos))
+            self.populacao.append(Individuo(valores, espacos, limite_espacos))
         self.melhor_solucao = self.populacao[0]
         
     def ordena_populacao(self):
@@ -46,8 +46,8 @@ class AlgoritmoGenetico():
                                                                melhor.espaco_usado,
                                                                melhor.cromossomo))
     
-    def resolver(self, taxa_mutacao, numero_geracoes, valores, limite_espacos):
-        self.inicializa_populacao(valores, limite_espacos)
+    def resolver(self, taxa_mutacao, numero_geracoes, valores, espacos, limite_espacos):
+        self.inicializa_populacao(valores, espacos, limite_espacos)
         
         for individuo in self.populacao:
             individuo.avaliacao()

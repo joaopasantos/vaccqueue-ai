@@ -1,7 +1,8 @@
 from random import random
 
 class Individuo():
-    def __init__(self, valores, limite_espacos, geracao=0):
+    def __init__(self, valores, espacos, limite_espacos, geracao=0):
+        self.espacos = espacos
         self.valores = valores
         self.limite_espacos = limite_espacos
         self.nota_avaliacao = 0
@@ -9,7 +10,7 @@ class Individuo():
         self.geracao = geracao
         self.cromossomo = []
         
-        for i in range(limite_espacos):
+        for i in range(self.espacos-1):
             if random() < 0.5:
                 self.cromossomo.append("0")
             else:
@@ -35,8 +36,8 @@ class Individuo():
         filho1 = outro_individuo.cromossomo[0:corte] + self.cromossomo[corte::]
         filho2 = self.cromossomo[0:corte] + outro_individuo.cromossomo[corte::]
         
-        filhos = [Individuo(self.valores, self.limite_espacos, self.geracao + 1),
-                  Individuo(self.valores, self.limite_espacos, self.geracao + 1)]
+        filhos = [Individuo(self.valores, self.espacos, self.limite_espacos, self.geracao + 1),
+                  Individuo(self.valores, self.espacos, self.limite_espacos, self.geracao + 1)]
         filhos[0].cromossomo = filho1
         filhos[1].cromossomo = filho2
         return filhos

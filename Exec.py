@@ -24,18 +24,20 @@ for pessoa in lista_pessoas:
     print("Nome: ", pessoa.nome, " - Pontuação", pessoa.pontuacao)
 
 #Listas contendo os dados da solução encontrada
+espacos = 0
 pontuacoes = []
 nomes = []
 for pessoa in lista_pessoas:
+    espacos += 1
     pontuacoes.append(pessoa.pontuacao)
     nomes.append(pessoa.nome)
-limite = 14
+limite = 10
 
 tamanho_populacao = 20
 taxa_mutacao = 0.01
 numero_geracoes = 100
 ag = AlgoritmoGenetico(tamanho_populacao)
-resultado = ag.resolver(taxa_mutacao, numero_geracoes, pontuacoes, limite)
+resultado = ag.resolver(taxa_mutacao, numero_geracoes, pontuacoes, espacos, limite)
 for i in range(limite):
     if resultado[i] == '1':
         print("Nome: %s - Pontuação: %s " % (lista_pessoas[i].nome,
