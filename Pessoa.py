@@ -10,9 +10,9 @@ class Pessoa():
         self.areaDeSeguranca = trabalhaNaAreaDeSeguranca
         self.areaDeTransporte = trabalhaNaAreaDeTransporte
         
-        self.valor = self.calculaValor()
+        self.pontuacao = self.calculaPontuacao()
         
-    def calculaValor(self):
+    def calculaPontuacao(self):
         # Pessoas com 60 anos ou mais institucionalizadas
         # Pessoas com deficiência institucionalizadas
         if (self.institucionalizada):
