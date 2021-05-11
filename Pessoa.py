@@ -1,5 +1,6 @@
 class Pessoa():
-    def __init__(self, nome, idade, institucionalizada, pcd, trabalhaNaAreaDeSaude, possuiComorbidades, trabalhaNaAreaDaEducacao, trabalhaNaAreaDeSeguranca, trabalhaNaAreaDeTransporte):
+    def __init__(self, nome, idade, institucionalizada, pcd, trabalhaNaAreaDeSaude, possuiComorbidades, 
+                 trabalhaNaAreaDaEducacao, trabalhaNaAreaDeSeguranca, trabalhaNaAreaDeTransporte):
         self.nome = nome
         self.idade = idade
         self.institucionalizada = institucionalizada

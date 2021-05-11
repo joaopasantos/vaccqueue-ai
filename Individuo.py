@@ -10,7 +10,7 @@ class Individuo():
         self.geracao = geracao
         self.cromossomo = []
         
-        for i in range(self.espacos-1):
+        for i in range(self.espacos):
             if random() < 0.5:
                 self.cromossomo.append("0")
             else:
@@ -19,15 +19,15 @@ class Individuo():
                 
     def avaliacao(self):
         nota = 0
-        soma_espacos = 0
+        espacos_ocupados = 0
         for i in range(len(self.cromossomo)):
            if self.cromossomo[i] == '1':
                nota += self.valores[i]
-               soma_espacos += 1
-        if soma_espacos > self.limite_espacos:
+               espacos_ocupados += 1
+        if espacos_ocupados > self.limite_espacos:
             nota = 1
         self.nota_avaliacao = nota
-        self.espaco_usado = soma_espacos
+        self.espaco_usado = espacos_ocupados
         
         
     def crossover(self, outro_individuo):
